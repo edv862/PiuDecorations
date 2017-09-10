@@ -1,0 +1,18 @@
+{% extends "layout/dashboard-template.html" %}
+{% load bootstrap3 %}
+
+{% block page-title %}
+  Crear Cliente
+{% endblock page-title %}
+{% block main-content %}
+  {# Display a form #}
+  <form method="post" class="form" novalidate>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+      <button type="submit" class="btn btn-primary">
+        {% bootstrap_icon "star" %} Crear
+      </button>
+    {% endbuttons %}
+  </form>
+{% endblock main-content %}

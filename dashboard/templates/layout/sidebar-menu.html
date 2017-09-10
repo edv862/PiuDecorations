@@ -1,0 +1,14 @@
+<ul class="sidebar-menu" data-widget="tree">
+  <!-- <li class="header">HEADER</li> -->
+  <li class="treeview">
+    <a href="#"><i class="fa fa-link"></i> <span>Clientes</span>
+      <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+    </a>
+    <ul class="treeview-menu">
+      <li><a href="{% url 'client:list' %}">Ver todos</a></li>
+      <li><a href="{% url 'client:create' %}">Crear nuevo</a></li>
+    </ul>
+  </li>
+</ul>

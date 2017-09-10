@@ -1,0 +1,14 @@
+{% extends "layout/dashboard-template.html" %}
+{% load bootstrap3 %}
+
+{% block page-title %}
+  Lista de Clientes
+{% endblock page-title %}
+{% block main-content %}
+  {% for client in clients %}
+    {{client}}
+    
+    <a href="{% url 'client:edit' pk=client.id %}">Editar cliente</a>
+    <a href="{% url 'client:delete' pk=client.id %}">Eliminar cliente</a>
+  {% endfor %}
+{% endblock main-content %}
