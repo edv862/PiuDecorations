@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from safedelete.models import SafeDeleteModel, SOFT_DELETE_CASCADE
 
+from order_raise.models import OrderRaise
+
 
 class Blind(SafeDeleteModel):
     _safedelete_policy = SOFT_DELETE_CASCADE
@@ -85,6 +87,12 @@ class Blind(SafeDeleteModel):
         verbose_name=u'Comentarios',
         max_length=1000,
         blank=True
+    )
+
+    order = models.ForeignKey(
+        OrderRaise,
+        related_name='blinds',
+        related_query_name='blind'
     )
 
     created_at = models.DateTimeField(

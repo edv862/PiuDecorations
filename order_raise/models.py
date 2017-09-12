@@ -8,21 +8,14 @@ from client.models import Client
 
 
 class OrderRaise(SafeDeleteModel):
+    # Has blinds, related_name = blinds, related_query_name= blind
     _safedelete_policy = SOFT_DELETE_CASCADE
 
     client = models.ForeignKey(
         Client,
-        related_name='orders'
+        related_name='orders',
+        related_query_name='order'
     )
-
-    # blind = models.ForeignKey(
-    #     Blind,
-    # )
-
-    # Can't have more than one Autofield by model, so number == id
-    # number = models.AutoField(
-    #     verbose_name='Número de levantamiento'
-    # )
 
     created_at = models.DateTimeField(
         verbose_name='Fecha del levantamiento',

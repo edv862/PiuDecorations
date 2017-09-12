@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django import forms
 
-from .models  import Client
+from .models import Client
 
 
 class ClientForm(forms.ModelForm):

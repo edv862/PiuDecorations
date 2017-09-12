@@ -2,14 +2,15 @@
 {% load bootstrap3 %}
 
 {% block page-title %}
-  Crear Cliente
+  Crear Levantamiento
 {% endblock page-title %}
 
 {% block main-content %}
   {# Display a form #}
   <form method="post" class="form" novalidate>
     {% csrf_token %}
-    {% bootstrap_form form %}
+    {% bootstrap_form client_form %}
+    {% bootstrap_formset blinds_formset layout='horizontal' %}
     {% buttons %}
       <button type="submit" class="btn btn-primary">
         <b class="fa fa-check"></b> Crear

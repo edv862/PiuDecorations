@@ -21,6 +21,16 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^client/', include('client.urls', namespace='client')),
-    url(r'^', include('dashboard.urls', namespace='dashboard')),
+    url(
+        r'^client/',
+        include('client.urls', namespace='client')
+    ),
+    url(
+        r'^order-raise/',
+        include('order_raise.urls', namespace='order_raise')
+    ),
+    url(
+        r'^',
+        include('dashboard.urls', namespace='dashboard')
+    ),
 ]
